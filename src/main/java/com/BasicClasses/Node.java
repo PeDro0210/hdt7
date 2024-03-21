@@ -20,6 +20,10 @@ public class Node<T> {
         return data;
     }
 
+    public Association<T, T> getAssociation() {
+        return association;
+    }
+    
     public Node<T> getLeft() {
         return left;
     }
