@@ -47,4 +47,18 @@ public class TreeTest {
         }
     }
 
+    @Test
+    public void SearchAssociation(){
+        BinaryTree<String> tree = new BinaryTree<String>();
+        tree.insert("wolf", "lobo");
+        tree.insert("dog", "perro");
+        tree.insert("cat", "gato");
+        tree.insert("fish", "pez");
+
+        assertTrue(tree.search("wolf").equals("lobo"));
+        assertTrue(tree.search("dog").equals("perro"));
+        assertTrue(tree.search("cat").equals("gato"));
+        assertTrue(tree.search("fish").equals("pez"));
+    }
+
 }

@@ -1,0 +1,3 @@
+wolf,lobo
+cat,gato
+dog,perro

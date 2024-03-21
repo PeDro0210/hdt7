@@ -15,7 +15,7 @@ public class BinaryTree<T extends Comparable<T>> {
         return root;
     }
 
-    public void insert(T key, T value) {
+    public void insert(T key, T value) { //Implemntacion agarra de https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/ (GOAT GeeksforGeeks!!)
         Node<T> newNode = new Node<T>(key, value);
         if (root == null) {
             root = newNode;
@@ -24,7 +24,7 @@ public class BinaryTree<T extends Comparable<T>> {
             Node<T> parent;
             while (true) {
                 parent = current;
-                if (key.compareTo(current.getData()) > 0) { // Compare with >
+                if (key.compareTo(current.getData()) > 0) {
                     current = current.getRight();
                     if (current == null) {
                         parent.setRight(newNode);
@@ -39,6 +39,20 @@ public class BinaryTree<T extends Comparable<T>> {
                 }
             }
         }
+    }
+
+    public T search(T key) {
+        Node<T> current = root;
+        while (current != null) {
+            if (key.compareTo(current.getData()) == 0) {
+                return current.getAssociation().getValue();
+            } else if (key.compareTo(current.getData()) > 0) {
+                current = current.getRight();
+            } else {
+                current = current.getLeft();
+            }
+        }
+        return null;
     }
 
     public ArrayList<Association<T,T>> inOrder(Node<T> node, ArrayList<Association<T,T>> list) { //aqui pues no puede hacerlo tan generico, porque mejor devuelvo una lista con las asociaciones de un solo

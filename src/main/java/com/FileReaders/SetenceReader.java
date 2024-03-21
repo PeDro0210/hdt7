@@ -11,6 +11,9 @@ public class SetenceReader {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(" ");
+                for (int i = 0; i < parts.length; i++) {
+                    parts[i] = parts[i].toLowerCase();
+                }
                 ArrayList<String> sentence = new ArrayList<String>();
                 for (String part : parts) {
                     sentence.add(part);
