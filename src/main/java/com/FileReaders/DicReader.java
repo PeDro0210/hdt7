@@ -13,6 +13,7 @@ public class DicReader {
             String line;
             while ((line = br.readLine()) != null) {
                 line = line.replaceAll("[()]", "");
+                line = line.toLowerCase();
                 String[] parts = line.split(",");
                 Association<String, String> Association = new Association<String, String>(parts[0], parts[1]);
                 dic.add(Association);

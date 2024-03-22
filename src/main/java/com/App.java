@@ -20,7 +20,7 @@ public class App
 
         result = dic.inOrder(dic.getRoot(), result);
         for (Association<String, String> association : result) { //Imprimir el arbol en orden
-            System.out.println(association.getKey() + " " + association.getValue());
+            System.out.println(association.getKey() + "," + association.getValue());
         }
 
 
